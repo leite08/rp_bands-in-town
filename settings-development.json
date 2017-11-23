@@ -1,0 +1,40 @@
+{
+    "public": {},
+    "private": {
+      "integration": {
+        "baseUrl": "https://rest.bandsintown.com",
+        "authTokenParam": "app_id",
+        "authToken": "rp-home24",
+        "artists": "/artists",
+        "events": "/events"
+      },
+      "log": {
+        "appenders": {
+          "out": {
+            "type": "stdout",
+            "layout": {
+              "type": "pattern",
+              "pattern": "%p %c - %m"
+            }
+          },
+          "file": {
+            "type": "file",
+            "filename": "rp-home24.log",
+            "maxLogSize": 5242880,
+            "backups": 5,
+            "layout": {
+              "type": "pattern",
+              "pattern": "%d %p %c - %m"
+            }
+          }
+        },
+        "categories": {
+          "default": {
+            "appenders": ["file","out"],
+            "level": "debug"
+          }
+        }
+      }
+    }
+  }
+  
