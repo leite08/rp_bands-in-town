@@ -14,19 +14,12 @@
   color: white;
   margin-bottom: 50px;
 }
-/*.App-header h2 {*/
-  /*margin-top: 10px;*/
-/*}*/
 .App-intro {
   font-size: large;
 }
 .Artist-Form {
   margin-top: 20px;
   margin-bottom: 20px;
-}
-
-.thumb {
-  height: 100px;
 }
 
 @keyframes App-logo-spin {

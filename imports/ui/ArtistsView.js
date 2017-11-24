@@ -7,12 +7,19 @@ import {Image} from 'react-bootstrap';
 const ArtistsView = ({ artist }) => {
   return (artist ?
       <div key={artist._id}>
-        <h3>Information about {artist.name}</h3>
+        <h2>Information about {artist.name}</h2>
         <div><Image src={artist.thumb_url} responsive bsClass="thumb"/></div>
         <div>View more at <a href={artist.url} target="_blank">{artist.url}</a></div>
-        <div>{artist.tracker_count}</div>
-        <div>{artist.tracker_count}</div>
-        <div>{artist.tracker_count}</div>
+        <div># of trackers: {artist.tracker_count}</div>
+        <hr/>
+        <h3>Events</h3>
+        {artist.events ? artist.events.map((event) =>
+          <div>
+            <div><a href={event.url} target="_blank">{event.venue.name}</a></div>
+          </div>
+        )
+        : <span>No events.</span>
+        }
       </div>
       : <span></span>
   );

@@ -28,6 +28,7 @@ class Artists extends Component {
       <div>
         <ArtistsSearch onResult={this.onResult} />
         <ArtistsView artist={artists} />
+        <h2>List of Artists</h2>
         <ArtistsList /> {/* TODO optional */}
       </div>
     );
