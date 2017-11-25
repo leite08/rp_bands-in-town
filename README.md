@@ -18,17 +18,27 @@ Basic technologies:
 
 ## Installation
 
+Install Meteor:
+
+    https://www.meteor.com/install
+    
 After forking and cloning the repo:
 
-    cd Create-React-Meteor-App
-    meteor -s settings-development.json  
+    cd rp_band-in-town
+    meteor -s settings-development.json
+
+
+## Team
+
+- Otávio Soares - https://github.com/otaviosoares
+- Rafael Leite - https://github.com/leite08
+- ...
 
 
 ## Tech Stack
 
 - Meteor
 - React
-- ...
 
 
 ## License
