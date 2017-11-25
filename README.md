@@ -1,7 +1,13 @@
 # Client for Bands In Town
 ## Meteor + React connected to Rest API
 
-Bands in Town has a an API available with documentation at:
+This application allows for the user to enter the music artist 
+name and it shows basic information about her/his and the next
+shows they will perform. Its a wrap for the Bands in Town API.
+
+![home image](https://raw.githubusercontent.com/leite08/rp_bands-in-town/master/docs/home.png "Home image of the application")
+
+Bands in Town API is available with documentation at:
 https://app.swaggerhub.com/apis/Bandsintown/PublicAPI/3.0.0
 
 Built for the VanHack Week Nov/2017:
