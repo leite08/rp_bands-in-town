@@ -21,3 +21,5 @@ twbs:bootstrap
 react-meteor-data
 ddp-rate-limiter@1.0.7
 themeteorchef:bert
+practicalmeteor:mocha
+meteortesting:mocha

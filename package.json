@@ -2,7 +2,9 @@
   "name": "rp_band-in-town",
   "private": true,
   "scripts": {
-    "start": "meteor run"
+    "start": "meteor run -s settings-development.json",
+    "test:client": "jest",
+    "test": "jest --watchAll"
   },
   "dependencies": {
     "babel-runtime": "^6.26.0",
@@ -13,5 +15,17 @@
     "react-bootstrap": "^0.31.5",
     "react-dom": "^15.6.2",
     "react-router-dom": "^4.2.2"
+  },
+  "devDependencies": {
+    "babel-jest": "^21.2.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "enzyme": "^3.2.0",
+    "enzyme-adapter-react-15": "^1.0.5",
+    "jest": "^21.2.1",
+    "jest-enzyme": "^4.0.1",
+    "jest-meteor-stubs": "^1.5.1",
+    "react-test-renderer": "^15.6.2"
   }
 }
