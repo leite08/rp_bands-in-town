@@ -10,16 +10,6 @@ const artistUri = `${Meteor.settings.private.integration.artists}`;
 const eventsUri = `${Meteor.settings.private.integration.events}`;
 const auth = `${Meteor.settings.private.integration.authTokenParam}=${Meteor.settings.private.integration.authToken}`;
 
-export const getArtistFromApi = (name) => {
-  logger.trace(`[getArtistFromApi] starting, name: ${name}`);
-  try {
-    const url = `${baseUrl}${artistUri}/${name}?${auth}`;
-    return getFromApi(url);
-  } finally {
-    logger.trace('[getArtistFromApi] leaving');
-  }
-};
-
 const getFromApi = (url) => {
   logger.trace(`[getFromApi] starting, url: ${url}`);
   try {
@@ -35,6 +25,16 @@ const getFromApi = (url) => {
     throw new Meteor.Error('500', exception);
   } finally {
     logger.trace('[getFromApi] leaving');
+  }
+};
+
+export const getArtistFromApi = (name) => {
+  logger.trace(`[getArtistFromApi] starting, name: ${name}`);
+  try {
+    const url = `${baseUrl}${artistUri}/${name}?${auth}`;
+    return getFromApi(url);
+  } finally {
+    logger.trace('[getArtistFromApi] leaving');
   }
 };
 

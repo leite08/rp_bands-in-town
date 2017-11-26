@@ -12,6 +12,24 @@ const getArtistByName = (name) => {
   return Artists.findOne({'nameLower':name.toLowerCase()});
 };
 
+const saveEvents = (events) => {
+  events.forEach((event) => {
+    Events.insert(event);
+  });
+};
+
+const saveArtistOnLocalDb = (artist) => {
+  artist.nameLower = artist.name.toLowerCase();
+  const _id = Artists.insert(artist);
+  const artistLocal = Artists.findOne(_id);
+  // retrieve the artist's events
+  const events = getEventsFromApi(artist.name);
+  // save the events on its own collection
+  saveEvents(events);
+  artistLocal.events = events;
+  return artistLocal;
+};
+
 // TODO limit the number of documents on the collection/DB (each call vs. timer?)
 Meteor.methods({
   artistSearch(artistName) {
@@ -34,22 +52,12 @@ Meteor.methods({
         if (!artistLocal) {
           foundLocal = false;
           // Save the artist on the local database
-          artist.nameLower = artist.name.toLowerCase();
-          const _id = Artists.insert(artist);
-          artistLocal = Artists.findOne(_id);
-          // retrieve the artist's events
-          const events = getEventsFromApi(artistName);
-          // save the events on its own collection
-          events.forEach((event) => {
-            Events.insert(event);
-          });
-          artistLocal.events = events;
+          artistLocal = saveArtistOnLocalDb(artist);
         }
       }
       if (foundLocal) {
         // load the events
-        const eventsLocal = Events.find({'artist_id':artistLocal.id});
-        artistLocal.events = eventsLocal.fetch();
+        artistLocal.events = Events.find({'artist_id':artistLocal.id}).fetch();
         // TODO check if there are updates on the artist's events and send a reactive update to the client
       }
       return artistLocal;
