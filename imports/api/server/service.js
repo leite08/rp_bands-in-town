@@ -20,16 +20,6 @@ export const getArtistFromApi = (name) => {
   }
 };
 
-export const getEventsFromApi = (name) => {
-  logger.trace(`[getEventsFromApi] starting, name: ${name}`);
-  try {
-    const url = `${baseUrl}${artistUri}/${name}${eventsUri}?${auth}`;
-    return getFromApi(url);
-  } finally {
-    logger.trace('[getEventsFromApi] leaving');
-  }
-};
-
 const getFromApi = (url) => {
   logger.trace(`[getFromApi] starting, url: ${url}`);
   try {
@@ -38,12 +28,22 @@ const getFromApi = (url) => {
     if (response.data) {
       return response.data;
     }
-    return undefined;
+    return;
 
   } catch (exception) {
     logger.error(exception);
     throw new Meteor.Error('500', exception);
   } finally {
     logger.trace('[getFromApi] leaving');
+  }
+};
+
+export const getEventsFromApi = (name) => {
+  logger.trace(`[getEventsFromApi] starting, name: ${name}`);
+  try {
+    const url = `${baseUrl}${artistUri}/${name}${eventsUri}?${auth}`;
+    return getFromApi(url);
+  } finally {
+    logger.trace('[getEventsFromApi] leaving');
   }
 };
