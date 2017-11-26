@@ -3,6 +3,7 @@
   "private": true,
   "scripts": {
     "start": "meteor run -s settings-development.json",
+    "test:client": "jest",
     "test": "jest --watchAll"
   },
   "dependencies": {

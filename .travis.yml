@@ -3,7 +3,7 @@ node_js:
   - "8.9"
 
 script:
-- npm test
+- npm run test:client
 
 
 cache:
