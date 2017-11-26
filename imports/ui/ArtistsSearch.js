@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { FormGroup, InputGroup, Button, Image} from 'react-bootstrap';
 import { ReactiveVar } from 'meteor/reactive-var';
 import { withTracker } from 'meteor/react-meteor-data';
 
@@ -36,15 +35,15 @@ class ArtistsSearch extends Component {
     return (
       <div className="Artist-Form">
         <form ref={form => (this.form = form)} onSubmit={this.handleSubmit}>
-          <FormGroup>
-            <InputGroup>
-              <input type="text" className="form-control" placeholder="Artist name"
+          <div className="row uniform">
+            <div className="9u 12u$(small)">
+              <input type="text" placeholder="Artist name"
                      name="name" ref={name => (this.name = name)} required/>
-              <InputGroup.Button>
-                <Button type="submit" bsStyle="success">Go</Button>
-              </InputGroup.Button>
-            </InputGroup>
-          </FormGroup>
+            </div>
+            <div className="3u$ 12u$(small)">
+              <input type="submit" value="Search" className="fit" />
+            </div>
+          </div>
         </form>
         {loading &&
           <span>Loading...</span>

@@ -6,10 +6,14 @@ import Artists from '../../imports/ui/Artists';
 const app = () => (
   <Router>
     <div className="App">
-      <div className="App-header">
-        <h2>Rockies & Prairies > Home24 Challenge</h2>
-      </div>
-      <Artists />
+      <header id="header">
+        <h2 className="logo">Rockies & Prairies > Home24 Challenge</h2>
+			</header>
+      <section id="main" className="wrapper">
+				<div className="inner">
+          <Artists />
+        </div>
+      </section>
     </div>
   </Router>
 );

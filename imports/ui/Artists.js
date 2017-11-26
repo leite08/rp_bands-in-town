@@ -34,9 +34,9 @@ class Artists extends Component {
     const { artist, showList } = this.props;
     return (
       <div>
-        <div><span>
+        <p>
           Would you like to know when your favourite artist will play? Use the search below to find out:
-        </span></div>
+        </p>
         <ArtistsSearch onInitSearch={this.onInitSearch} onResult={this.onResult} />
         <ArtistsView artist={artist} />
         {/* extra stuff */}
