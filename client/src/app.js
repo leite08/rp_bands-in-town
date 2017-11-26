@@ -1,7 +1,14 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
+import { Bert } from 'meteor/themeteorchef:bert';
 import './app.css';
 import Artists from '../../imports/ui/Artists';
+
+// From: https://github.com/themeteorchef/bert
+Bert.defaults = {
+  hideDelay: 3500,
+  style: 'growl-top-right'
+};
 
 const app = () => (
   <Router>

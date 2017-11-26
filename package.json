@@ -1,5 +1,5 @@
 {
-  "name": "Create-React-Meteor-App",
+  "name": "rp_band-in-town",
   "private": true,
   "scripts": {
     "start": "meteor run"

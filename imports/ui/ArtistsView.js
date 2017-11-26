@@ -12,10 +12,10 @@ const ArtistsView = ({ artist }) => {
         <hr/>
         <h3>Events</h3>
         {artist.events ? artist.events.map((event) =>
-          <div key={event.id}>
+          <div key={event.id} className="event-container">
             <div><a href={event.url} target="_blank">{event.venue.name}</a></div>
             <div>Where: {event.venue.city}, {event.venue.country}</div>
-            <div>When: {event.datetime}</div>
+            <div>When: {new Intl.DateTimeFormat().format(new Date(event.datetime))}</div>
           </div>
         )
         : <span>No events.</span>

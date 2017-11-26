@@ -1,5 +1,7 @@
-# Client for Bands In Town
+# Client for Bands In Town ![Build Status](https://travis-ci.org/leite08/rp_bands-in-town.svg?branch=master)
 ## Meteor + React connected to Rest API
+
+https://travis-ci.org/leite08/rp_bands-in-town/pull_requests#
 
 This application allows for the user to enter the music artist 
 name and it shows basic information about her/his and the next
