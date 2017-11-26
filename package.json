@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "start": "meteor run -s settings-development.json",
-    "test": "jest"
+    "test": "jest --watchAll"
   },
   "dependencies": {
     "babel-runtime": "^6.26.0",

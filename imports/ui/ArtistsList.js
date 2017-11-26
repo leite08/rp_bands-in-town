@@ -17,7 +17,7 @@ const ArtistsList = ({ loading, artists }) => (!loading ?
       </thead>
       <tbody>
       {(artists && artists.length > 0) ? artists.map((artist) =>
-          <tr key={artist._id}>
+          <tr key={artist._id} className="artist-row">
             <td className="thumb"><img src={artist.thumb_url} /></td>
             <td><a href={artist.url} target="_blank">{artist.name}</a></td>
             <td>{artist.tracker_count}</td>
