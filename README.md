@@ -1,4 +1,4 @@
-# Client for Bands In Town ![Build Status](https://travis-ci.org/leite08/rp_bands-in-town.svg?branch=master)
+# Client for Bands In Town ![Build Status](https://travis-ci.org/leite08/rp_bands-in-town.svg?branch=master) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/5036922396c44e4db6b780cfe30cefbf)](https://www.codacy.com/app/leite08/rp_bands-in-town?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=leite08/rp_bands-in-town&amp;utm_campaign=Badge_Grade)
 ## Meteor + React connected to Rest API
 
 https://travis-ci.org/leite08/rp_bands-in-town/pull_requests#
