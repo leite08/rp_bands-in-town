@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+  - "5"
+
+before_install:
+  # Download Meteor
+  - PATH=$PATH:$HOME/.meteor
+  - if [ ! -e $HOME/.meteor/meteor ]; then curl -k https://install.meteor.com/?release=1.6 | sh; fi
+  # Install NPM dependencies
+  - npm install
+
+cache:
+  directories:
+    - node_modules
+    - .meteor
+

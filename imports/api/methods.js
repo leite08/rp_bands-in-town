@@ -9,7 +9,12 @@ let log4js = Npm.require('log4js');
 let logger = log4js.getLogger('srv-bit-methods');
 
 const getArtistByName = (name) => {
-  return Artists.findOne({'nameLower':name.toLowerCase()});
+  const artist = Artists.findOne({'nameLower':name.toLowerCase()});
+  if (artist) {
+    // TODO check if there are updates on the artist's events and send a reactive update to the client
+    artist.events = Events.find({'artist_id':artist.id}).fetch();
+  }
+  return artist;
 };
 
 const saveEvents = (events) => {
@@ -38,7 +43,6 @@ Meteor.methods({
     try {
       // First look for the artist on the local database
       // TODO mind indexes for performance
-      let foundLocal = true;
       let artistLocal = getArtistByName(artistName);
       if (!artistLocal) {
         // If not found, then call the API to get the artist
@@ -50,15 +54,9 @@ Meteor.methods({
         // the service might have returned an artist with similar name
         artistLocal = getArtistByName(artist.name);
         if (!artistLocal) {
-          foundLocal = false;
           // Save the artist on the local database
           artistLocal = saveArtistOnLocalDb(artist);
         }
-      }
-      if (foundLocal) {
-        // load the events
-        artistLocal.events = Events.find({'artist_id':artistLocal.id}).fetch();
-        // TODO check if there are updates on the artist's events and send a reactive update to the client
       }
       return artistLocal;
 
