@@ -40,7 +40,7 @@ After forking and cloning the repo:
 
 - Otávio Soares - https://github.com/otaviosoares
 - Rafael Leite - https://github.com/leite08
-- ...
+- Sohel Almozaini - https://github.com/i-Sohel
 
 
 ## Tech Stack
